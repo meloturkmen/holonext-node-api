@@ -132,10 +132,12 @@
     console.log(list)
     let btn = document.getElementById('btn')
     let infos = []
+
     fetch('http://localhost:3000/getdata')
       .then((response) => response.json())
       .then((data) => {
         btn.addEventListener('click', () => {
+          list.innerHTML = ''
           data.forEach((item, index) => {
             console.log(item)
             var list_item = document.createElement('li')
